@@ -154,6 +154,34 @@ header nav a:hover {
     border-radius: 10px;
 }
 
+.ouvir
+{
+    background-color: #f4f4f4;
+    color: #0B2A5B;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#btnContraste
+{
+    background-color: #f4f4f4;
+    color: #0B2A5B;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
 
 .card img {
     border-radius: 5px;
@@ -310,13 +338,99 @@ footer {
 }
 
 /* 7. RESPONSIVIDADE (CELULAR) */
+
 @media (max-width: 768px) {
-    .hero h1 { font-size: 32px; }
-    header { flex-direction: column; height: auto; padding: 20px; }
-    header nav { margin-top: 15px; }
-    header nav a { margin: 0 10px; }
+    header {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        flex-direction: row !important; /* Força ficar um ao lado do outro */
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: auto !important;
+        padding: 10px 2% !important;
+    }
+
+    /* 1. Logo na Esquerda */
+    header .logo {
+        order: 1; /* Primeiro elemento */
+        flex: 0 0 40%; /* Ocupa 40% da largura */
+        max-width: 120px;
+    }
+
+    header .logo img {
+        height: 40px !important;
+        width: auto;
+    }
+
+    /* 2. Acessibilidade na Direita */
+    .acessibilidade {
+        order: 2; /* Segundo elemento, fica ao lado da logo */
+        flex: 0 0 55%; /* Ocupa o restante da linha */
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 5px !important;
+    }
+
+    /* Diminuir botões para caberem na linha da logo */
+    .acessibilidade button, #altocon, #btnContraste {
+        width: 30px !important;
+        height: 30px !important;
+        padding: 0 !important;
+        font-size: 10px !important;
+        min-width: 30px !important;
+    }
+
+    /* 3. Nav em baixo (Linha nova) */
+    header nav {
+        order: 3; /* Vai para a linha de baixo */
+        flex: 0 0 100%; /* Ocupa 100% da largura, forçando a quebra */
+        display: flex !important;
+        justify-content: space-around !important;
+        margin-top: 15px !important;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 10px;
+    }
+
+    header nav a {
+        font-size: 10px !important;
+        margin: 0 !important;
+    }
+
+    /* Esconder o botão de ouvir no mobile para não quebrar a linha */
+    #readSite { display: none !important; }
+
+    #readSite {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 35px !important; /* Tamanho fixo circular */
+    height: 35px !important;
+    padding: 0 !important;
+    font-size: 16px !important; /* Aumenta o emoji para dar destaque */
+    border-radius: 50% !important;
+    background-color: #f4f4f4 !important;
+    color: transparent !important; /* Esconde o texto */
+    overflow: hidden;
+    position: relative;
 }
 
+/* 2. Garante que o Emoji de alto-falante fique visível e centralizado */
+#readSite::before {
+    content: "🔈";
+    color: #0B2A5B;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+}
+
+/* 3. Ajuste na div pai para caber mais um botão */
+.acessibilidade {
+    flex: 0 0 65% !important; /* Aumenta um pouco a área para caber o 5º botão */
+    gap: 4px !important;
+}
+}
 
 .titulo-site {
     font-size: 40px;
@@ -333,4 +447,102 @@ footer {
     margin-top: 10px;
 }
 
+
+/* MODO ALTO CONTRASTE */
+.contraste {
+    background-color: #000 !important;
+    color: #FFF !important;
+}
+
+/* Força bordas em todos os elementos para dar profundidade no preto */
+.contraste * {
+    border-color: #FFFF00 !important; 
+}
+
+.contraste header,
+.contraste footer {
+    background-color: #000 !important;
+    border-bottom: 2px solid #FFFF00 !important;
+}
+
+/* Cards com bordas vibrantes */
+.contraste .card,
+.contraste .card2,
+.contraste form {
+    background-color: #000 !important;
+    color: #FFF !important;
+    border: 3px solid #FFFF00 !important; /* Amarelo Neon */
+    box-shadow: none !important; /* Sombras não funcionam bem em alto contraste */
+}
+
+/* Links e Botões */
+.contraste a {
+    color: #FFFF00 !important;
+    text-decoration: underline !important; /* Essencial para acessibilidade */
+}
+
+.contraste .botao-amarelo {
+    background-color: #FFFF00 !important;
+    color: #000 !important;
+    border: 2px solid #FFF !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+}
+
+/* Ajuste das Imagens para não ofuscar */
+.contraste img {
+    filter: grayscale(100%) contrast(120%); /* Deixa as fotos das camisas em P&B dramático */
+    border: 1px solid #FFFF00 !important;
+}
+
+/* WhatsApp Float no Contraste */
+.contraste .whatsapp-float {
+    background-color: #FFFF00 !important;
+    color: #000 !important;
+    border: 2px solid #FFF !important;
+}
+
+.contraste .whatsapp-float img {
+    filter: invert(100%); /* Inverte o ícone para ficar visível no fundo amarelo */
+}
+
+/* Garante que o fundo azul do Hero e do Header sumam */
+.contraste .hero, 
+.contraste header, 
+.contraste footer,
+.contraste section,
+.contraste .secao {
+    background-color: #000 !important;
+    background-image: none !important; /* Remove gradientes se houver */
+    color: #FFF !important;
+    border-bottom: 2px solid #FFFF00 !important;
+}
+
+/* Ajusta os títulos que podem estar forçados em azul no CSS geral */
+.contraste h1, 
+.contraste h2, 
+.contraste h3,
+.contraste h4,
+.contraste .secao h1, 
+.contraste .secao h2 {
+    color: #FFFF00 !important; /* Títulos em Amarelo Neon para destaque */
+}
+
+/* Ajusta a logo para não sumir no fundo preto (opcional) */
+.contraste .logo
+{
+    background-color: #FFF !important; /* Cria um fundo branco para a logo no contraste */
+    border: 2px solid #FFFF00 !important;
+}
+
+/* Botões de A+ e A- no modo contraste */
+.contraste #btn1, 
+.contraste #btn2, 
+.contraste #altocon,
+.contraste #btnContraste,
+.contraste .ouvir {
+    background-color: #000 !important;
+    color: #FFFF00 !important;
+    border: 2px solid #FFFF00 !important;
+}
 
