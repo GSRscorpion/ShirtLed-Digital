@@ -1,0 +1,335 @@
+/* 1. RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. CABEÇALHO (HEADER) */
+header {
+    background-color: #0B2A5B; /* Azul do projeto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1%; /* Ajuste o 5% para menor se quiser a logo mais no canto */
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    height: 70px; /* Ajuste conforme necessário */
+    width: auto;
+}
+
+.logo
+{
+    background-color: #f4f4f4;
+    border: #f4f4f4 solid 2px;
+    border-radius: 10px 100px 1px 40px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #FFC107; /* Amarelo no hover */
+}
+
+/* 3. SEÇÃO HERO (PÁGINA INICIAL) */
+.hero {
+    background-color: #0B2A5B;
+    color: white;
+    padding: 100px 10%;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 48px;
+    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 500px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* 4. BOTÕES */
+.botao-amarelo {
+    background-color: #FFC107;
+    color: #0B2A5B;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.botao-amarelo:hover {
+    background-color: #e6af06;
+    transform: translateY(-2px);
+}
+
+/* 5. SEÇÕES GERAIS (SERVIÇOS E PORTFÓLIO) */
+.secao,.secao-apoio {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.secao h1, .secao h2,.secao-apoio h2, .port-end h3  {
+    color: #0B2A5B;
+    margin-bottom: 30px;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* GRID DE CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: #FFC107;
+    color: #0B2A5B;
+    font-weight: bold;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+#btn1:hover {
+    transform: translateY(-10px);
+}
+#btn2:hover {
+    transform: translateY(-10px);
+}
+
+#altocon:hover {
+    transform: none;
+}
+#altocon
+{
+    font-size: medium;
+    font-weight: bolder;
+    height: 40px;
+    background: #FFFFFF;
+    color: #0B2A5B;
+    border-radius: 10px;
+}
+
+
+.card img {
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card h3,h4 {
+    color: #0B2A5B;
+    margin-bottom: 10px;
+}
+.card2
+{
+
+    font-weight: bold;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+#btn1,#btn2
+{
+    background: #FFC107;
+    color: #0B2A5B;
+    font-weight: bold;
+    padding: 5px;
+    border: #0a234b solid;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+
+.card2:hover {
+    transform: translateY(-10px);
+}
+
+.card2 img {
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.card2 h3 {
+    color: #0B2A5B;
+    margin-bottom: 10px;
+}
+
+/* 6. FORMULÁRIO DE CONTATO */
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #0B2A5B;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.port-end
+{
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer {
+    background-color: #0B2A5B;
+    color: white;
+    padding: 40px 10% 20px 10%;
+    margin-top: 50px;
+}
+
+.footer-content 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-info, .footer-links 
+{
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-social
+{
+    flex: 1;
+    min-width: 200px;
+    padding-left: 190px;
+}
+
+.footer-links a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFC107;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    color: #999;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Dá um leve aumento ao passar o mouse */
+    background-color: #04b465;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* 7. RESPONSIVIDADE (CELULAR) */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    header { flex-direction: column; height: auto; padding: 20px; }
+    header nav { margin-top: 15px; }
+    header nav a { margin: 0 10px; }
+}
+
+
+.titulo-site {
+    font-size: 40px;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.subtitulo {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin-top: 10px;
+}
+
+
