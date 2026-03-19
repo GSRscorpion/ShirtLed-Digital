@@ -147,7 +147,8 @@ header nav a:hover {
 {
     font-size: medium;
     font-weight: bolder;
-    height: 40px;
+    height: 30px;
+    width: 70px;
     background: #FFFFFF;
     color: #0B2A5B;
     border-radius: 10px;
